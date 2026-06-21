@@ -10,6 +10,16 @@ from app.routers.notification import router as notification_router
 
 app = FastAPI(title="ResearchHub API")
 
+from app.database import engine, Base
+from app.models import User, ResearchQuery, ResearchPaper, SavedResult, Project, Notification
+
+@app.on_event("startup")
+async def startup():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    print("=== Database tables created ===")
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
