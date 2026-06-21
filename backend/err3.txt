@@ -1,0 +1,463 @@
+﻿alembic : INFO  
+[alembic.runtime.migration] 
+Context impl SQLiteImpl.
+At line:1 char:46
++ ... ripts\activate; python 
+check_db.py; alembic upgrade 
+head 2>&1 | Out-F ...
++                             
+            
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: (INFO  [al  
+  embic....mpl SQLiteImpl.:   
+ String) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+INFO  
+[alembic.runtime.migration] 
+Will assume non-transactional 
+DDL.
+INFO  
+[alembic.runtime.migration] 
+Running upgrade 8a1e48887d4b 
+-> 9dd14fb63ad9, add projects 
+tables
+Traceback (most recent call 
+last):
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 1967, 
+in _exec_single_context
+    self.dialect.do_execute(
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\default.py", line 952, 
+in do_execute
+    cursor.execute(statement, 
+parameters)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+dialects\sqlite\aiosqlite.py",
+ line 182, in execute
+    self._adapt_connection._ha
+ndle_exception(error)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+dialects\sqlite\aiosqlite.py",
+ line 342, in 
+_handle_exception
+    raise error
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+dialects\sqlite\aiosqlite.py",
+ line 164, in execute
+    self.await_(_cursor.execut
+e(operation, parameters))
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+util\_concurrency_py3k.py", 
+line 132, in await_only
+    return current.parent.swit
+ch(awaitable)  # type: ignore[
+no-any-return,attr-defined] # 
+noqa: E501
+           ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+util\_concurrency_py3k.py", 
+line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ursor.py", line 40, in execute
+    await self._execute(self._
+cursor.execute, sql, 
+parameters)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ursor.py", line 32, in 
+_execute
+    return await 
+self._conn._execute(fn, 
+*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ore.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ore.py", line 63, in 
+_connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: 
+table projects already exists
+
+The above exception was the 
+direct cause of the following 
+exception:
+
+Traceback (most recent call 
+last):
+  File "<frozen runpy>", line 
+198, in _run_module_as_main
+  File "<frozen runpy>", line 
+88, in _run_code
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Scripts\alembic.exe\__main__.
+py", line 7, in <module>
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\con
+fig.py", line 1047, in main
+    CommandLine(prog=prog).mai
+n(argv=argv)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\con
+fig.py", line 1037, in main
+    self.run_cmd(cfg, options)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\con
+fig.py", line 971, in run_cmd
+    fn(
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\com
+mand.py", line 483, in upgrade
+    script.run_env()
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\scr
+ipt\base.py", line 545, in 
+run_env
+    util.load_python_file(self
+.dir, "env.py")
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\uti
+l\pyfiles.py", line 116, in 
+load_python_file
+    module = 
+load_module_py(module_id, 
+path)
+             ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\uti
+l\pyfiles.py", line 136, in 
+load_module_py
+    spec.loader.exec_module(mo
+dule)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^
+  File "<frozen importlib._boo
+tstrap_external>", line 940, 
+in exec_module
+  File "<frozen 
+importlib._bootstrap>", line 
+241, in 
+_call_with_frames_removed
+  File "F:\Project 
+Impl\Project 
+Impl\backend\alembic\env.py", 
+line 91, in <module>
+    run_migrations_online()
+  File "F:\Project 
+Impl\Project 
+Impl\backend\alembic\env.py", 
+line 85, in 
+run_migrations_online
+    asyncio.run(run_async_migr
+ations())
+  File "C:\Users\Unmesh\AppDat
+a\Local\Programs\Python\Python
+311\Lib\asyncio\runners.py", 
+line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Unmesh\AppDat
+a\Local\Programs\Python\Python
+311\Lib\asyncio\runners.py", 
+line 118, in run
+    return self._loop.run_unti
+l_complete(task)
+           ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\Unmesh\AppDat
+a\Local\Programs\Python\Python
+311\Lib\asyncio\base_events.py
+", line 654, in 
+run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project 
+Impl\backend\alembic\env.py", 
+line 77, in 
+run_async_migrations
+    await connection.run_sync(
+do_run_migrations)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+ext\asyncio\engine.py", line 
+888, in run_sync
+    return await 
+greenlet_spawn(
+           
+^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+util\_concurrency_py3k.py", 
+line 203, in greenlet_spawn
+    result = 
+context.switch(value)
+             
+^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project 
+Impl\backend\alembic\env.py", 
+line 61, in do_run_migrations
+    context.run_migrations()
+  File "<string>", line 8, in 
+run_migrations
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\run
+time\environment.py", line 
+969, in run_migrations
+    self.get_context().run_mig
+rations(**kw)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\run
+time\migration.py", line 626, 
+in run_migrations
+    step.migration_fn(**kw)
+  File "F:\Project 
+Impl\Project Impl\backend\alem
+bic\versions\9dd14fb63ad9_add_
+projects_tables.py", line 24, 
+in upgrade
+    
+op.create_table('projects',
+  File "<string>", line 8, in 
+create_table
+  File "<string>", line 3, in 
+create_table
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\ope
+rations\ops.py", line 1331, 
+in create_table
+    return 
+operations.invoke(op)
+           
+^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\ope
+rations\base.py", line 452, 
+in invoke
+    return fn(self, operation)
+           ^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\ope
+rations\toimpl.py", line 140, 
+in create_table
+    operations.impl.create_tab
+le(table, **kw)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\ddl
+\impl.py", line 442, in 
+create_table
+    self._exec(schema.CreateTa
+ble(table, **kw))
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\alembic\ddl
+\impl.py", line 256, in _exec
+    return 
+conn.execute(construct, 
+params)
+           ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 1419, 
+in execute
+    return meth(
+           ^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+sql\ddl.py", line 187, in 
+_execute_on_connection
+    return 
+connection._execute_ddl(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 1530, 
+in _execute_ddl
+    ret = 
+self._execute_context(
+          
+^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 1846, 
+in _execute_context
+    return 
+self._exec_single_context(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 1986, 
+in _exec_single_context
+    
+self._handle_dbapi_exception(
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 2363, 
+in _handle_dbapi_exception
+    raise sqlalchemy_exception
+.with_traceback(exc_info[2]) 
+from e
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\base.py", line 1967, 
+in _exec_single_context
+    self.dialect.do_execute(
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+engine\default.py", line 952, 
+in do_execute
+    cursor.execute(statement, 
+parameters)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+dialects\sqlite\aiosqlite.py",
+ line 182, in execute
+    self._adapt_connection._ha
+ndle_exception(error)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+dialects\sqlite\aiosqlite.py",
+ line 342, in 
+_handle_exception
+    raise error
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+dialects\sqlite\aiosqlite.py",
+ line 164, in execute
+    self.await_(_cursor.execut
+e(operation, parameters))
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+util\_concurrency_py3k.py", 
+line 132, in await_only
+    return current.parent.swit
+ch(awaitable)  # type: ignore[
+no-any-return,attr-defined] # 
+noqa: E501
+           ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\sqlalchemy\
+util\_concurrency_py3k.py", 
+line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ursor.py", line 40, in execute
+    await self._execute(self._
+cursor.execute, sql, 
+parameters)
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ursor.py", line 32, in 
+_execute
+    return await 
+self._conn._execute(fn, 
+*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ore.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "F:\Project 
+Impl\Project Impl\backend\venv
+\Lib\site-packages\aiosqlite\c
+ore.py", line 63, in 
+_connection_worker_thread
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalErro
+r: (sqlite3.OperationalError) 
+table projects already exists
+[SQL: 
+CREATE TABLE projects (
+	id INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	name VARCHAR(255) NOT NULL, 
+	description TEXT, 
+	created_at DATETIME DEFAULT 
+(CURRENT_TIMESTAMP), 
+	updated_at DATETIME DEFAULT 
+(CURRENT_TIMESTAMP), 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) 
+REFERENCES users (id) ON 
+DELETE CASCADE
+)
+
+]
+(Background on this error at: 
+https://sqlalche.me/e/20/e3q8)
